@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        nav {
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .hero {
+            background-image: url(weathercon.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: calc(100vh - 50px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .question {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: forestgreen;
+        }
+        .form-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container input {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+        }
+        .message {
+            color: red;
+            margin-top: 10px;
+        }
+        .weather-info {
+            display: none;
+            border: 2px solid green;
+            background-color: #e0f7e0;
+            color: black;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #newsPage {
+        display: none;
+        padding: 20px;
+        background-color: rgb(91, 103, 243);
+    }
+       #newsPage h2 {
+        margin-bottom: 20px;
+    }
+        #newsPage ul {
+        list-style-type: none;
+        padding: 0; 
+    }
+    #newsPage li {
+        background-color: #f0f0f0; 
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 5px 0; 
+        transition: background-color 0.3s; 
+    }
+    #newsPage li:hover {
+        background-color: #e0e0e0;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" id="homeLink">Home</a>
+        <a href="#" id="newsLink">News</a>
+        <a href="#">Weather</a>
+        <a href="#">Services</a>
+    </nav>
+    
+    <div class="hero" id="homePage">
+        <div class="question">Do you want to check your weather condition for today?</div>
+        <button class="btn" id="yesBtn">Yes</button>
+        <button class="btn" id="noBtn">No</button>
+        
+        <div class="form-container" id="formContainer">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <button class="btn" id="submitBtn">Submit</button>
+            <div class="message" id="message"></div>
+        </div>
+
+        <div class="weather-info" id="weather-info"></div>
+    </div>
+
+    <div id="newsPage">
+        <h2>Country Weather Statistics</h2>
+        <p>Here you would see statistics for different countries.</p>
+        <ul>
+            <li>USA: Average Temperature 15°C</li>
+            <li>UK: Average Temperature 10°C</li>
+            <li>Australia: Average Temperature 25°C</li>
+            <li>Cameroon: Average Temperature 30°C</li>
+        </ul>
+    </div>
+
+    <script src="mystyle.js"></script>
+</body>
+</html>
